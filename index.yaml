@@ -1,0 +1,107 @@
+apiVersion: v1
+entries:
+  cadvisor:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-02-07T12:57:32.782680666Z"
+    description: A Helm chart for Kubernetes
+    digest: 9fb1eba87d6eb7ccbf937632a655f364f14124ff02fa6ce865825580d87d797b
+    name: cadvisor
+    type: application
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/cadvisor-0.1.10/cadvisor-0.1.10.tgz
+    version: 0.1.10
+  kube-state-metrics:
+  - apiVersion: v1
+    appVersion: 1.9.8
+    created: "2022-02-07T12:57:32.957411615Z"
+    deprecated: true
+    description: Install kube-state-metrics to generate and expose cluster-level metrics
+    digest: 0d2c961b1783d7cacaadabdf49d35c5d487e084e3fb1131536406ea652b12195
+    home: https://github.com/kubernetes/kube-state-metrics/
+    keywords:
+    - metric
+    - monitoring
+    - prometheus
+    - kubernetes
+    name: kube-state-metrics
+    sources:
+    - https://github.com/kubernetes/kube-state-metrics/
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/kube-state-metrics-2.9.4/kube-state-metrics-2.9.4.tgz
+    version: 2.9.4
+  kubewatch:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 0.1.2
+    created: "2022-02-07T12:57:33.129113269Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Kubewatch is a Kubernetes watcher that currently publishes notification to Slack.
+    digest: f7104912308f69230ebc7de6c1e0c5ff8652061d0c99918fd2cf5d6809ab46a2
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kubewatch
+    icon: https://bitnami.com/assets/stacks/kubewatch/img/kubewatch-stack-220x234.png
+    keywords:
+    - kubernetes
+    - slack
+    - hipchat
+    - mattermost
+    - flock
+    - msteams
+    name: kubewatch
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/kubewatch-0.1.6/kubewatch-0.1.6.tgz
+    version: 0.1.6
+  metrics-server:
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2022-02-07T12:57:33.308456865Z"
+    description: A Helm chart for Kubernetes
+    digest: 9a6a88eafbc6af94c75a2e26d0ececc1ed6c9be0b2218678805eb2b4b811d641
+    name: metrics-server
+    type: application
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/metrics-server-0.1.1/metrics-server-0.1.1.tgz
+    version: 0.1.1
+  prometheus:
+  - apiVersion: v1
+    appVersion: 2.22.0
+    created: "2022-02-07T12:57:33.50979756Z"
+    description: Prometheus is a monitoring system and time series database.
+    digest: 27ebed2b6984ff64812f65cf56488e40516221fe4ea4f18ac2ce0dce250eda7c
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/prometheus-9.5.12/prometheus-9.5.12.tgz
+    version: 9.5.12
+  prometheus-node-exporter:
+  - apiVersion: v1
+    appVersion: 1.0.1
+    created: "2022-02-07T12:57:33.681304208Z"
+    deprecated: true
+    description: prometheus node-exporter
+    digest: f7f8081c49630423d7a34886aae99bc9b7f03aa3295343d2d2753e30ba2cdfd5
+    home: https://github.com/prometheus/node_exporter/
+    keywords:
+    - node-exporter
+    - prometheus
+    - exporter
+    name: prometheus-node-exporter
+    sources:
+    - https://github.com/prometheus/node_exporter/
+    urls:
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/prometheus-node-exporter-1.11.3/prometheus-node-exporter-1.11.3.tgz
+    version: 1.11.3
+generated: "2022-02-07T12:57:32.572176279Z"
