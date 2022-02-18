@@ -1,0 +1,29 @@
+{{- if .Values.virtualservice.enabled -}}
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: {{ template "grafana.fullname" . }}
+  namespace: {{ template "grafana.namespace" . }}
+  labels:
+    {{- include "grafana.labels" . | nindent 4 }}
+{{- if .Values.service.labels }}
+{{ toYaml .Values.service.labels | indent 4 }}
+{{- end }}
+{{- with .Values.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+  hosts:
+  {{- range $hosts := .Values.virtualservice.hosts }}
+    - {{ $hosts }}
+  {{- end }}
+  gateways:
+    - istio-system/istio-gateway
+  http:
+  - route:
+    - destination:
+        host: {{ template "grafana.fullname" . }}
+        port:
+          number: {{ .Values.service.port }}
+{{- end -}}
