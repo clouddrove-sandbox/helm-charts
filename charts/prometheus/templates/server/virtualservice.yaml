@@ -1,0 +1,31 @@
+{{- if .Values.server.enabled -}}
+{{- if .Values.server.virtualservice.enabled -}}
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+{{- if .Values.server.service.annotations }}
+  annotations:
+{{ toYaml .Values.server.service.annotations | indent 4 }}
+{{- end }}
+  labels:
+    {{- include "prometheus.server.labels" . | nindent 4 }}
+{{- if .Values.server.service.labels }}
+{{ toYaml .Values.server.service.labels | indent 4 }}
+{{- end }}
+  name: {{ template "prometheus.server.fullname" . }}
+{{ include "prometheus.namespace" . | indent 2 }}
+spec:
+  hosts:
+  {{- range $hosts := .Values.server.virtualservice.hosts }}
+    - {{ $hosts }}
+  {{- end }}
+  gateways:
+    - istio-system/istio-gateway
+  http:
+  - route:
+    - destination:
+        host: {{ template "prometheus.server.fullname" . }}
+        port:
+          number: {{ .Values.server.service.servicePort }}
+{{- end -}}
+{{- end -}}
