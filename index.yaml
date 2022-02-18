@@ -1,38 +1,30 @@
 apiVersion: v1
 entries:
-  prometheus:
+  grafana:
   - apiVersion: v2
-    appVersion: 2.31.1
-    created: "2022-02-18T13:45:32.107829123Z"
-    dependencies:
-    - condition: kubeStateMetrics.enabled
-      name: kube-state-metrics
-      repository: https://prometheus-community.github.io/helm-charts
-      version: 4.4.*
-    description: Prometheus is a monitoring system and time series database.
-    digest: cd3798a7d343288f82526df65271b34c5be45bc1a1a70cc86fa33f3fe94ac5bf
-    home: https://prometheus.io/
-    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    appVersion: 8.3.5
+    created: "2022-02-18T13:47:40.454024923Z"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: d0f18762692c8be28c7cdb70d16734c7f8d93cb7c6ab0b3979728b50d9f1353b
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    kubeVersion: ^1.8.0-0
     maintainers:
-    - email: gianrubio@gmail.com
-      name: gianrubio
     - email: zanhsieh@gmail.com
       name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
     - email: miroslav.hadzhiev@gmail.com
       name: Xtigyro
-    - email: monotek23@gmail.com
-      name: monotek
-    - email: naseem@transit.app
-      name: naseemkullah
-    name: prometheus
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    name: grafana
     sources:
-    - https://github.com/prometheus/alertmanager
-    - https://github.com/prometheus/prometheus
-    - https://github.com/prometheus/pushgateway
-    - https://github.com/prometheus/node_exporter
-    - https://github.com/kubernetes/kube-state-metrics
+    - https://github.com/grafana/grafana
     type: application
     urls:
-    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/prometheus-15.3.0-istio-compatible/prometheus-15.3.0-istio-compatible.tgz
-    version: 15.3.0-istio-compatible
-generated: "2022-02-18T13:45:31.891267636Z"
+    - https://github.com/clouddrove-sandbox/helm-charts/releases/download/grafana-6.21.6-istio-compatible/grafana-6.21.6-istio-compatible.tgz
+    version: 6.21.6-istio-compatible
+generated: "2022-02-18T13:47:40.335405533Z"
